@@ -1,0 +1,32 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option type 'bridge'
+	option proto 'dhcp'
+	option netmask '255.255.255.0'
+	option hostname 'OpenWRT'
+	option _orig_ifname 'eth0 eth1 eth2 eth3 wlan0 wlan1'
+	option _orig_bridge 'true'
+	option ifname 'eth0 eth1 eth2 eth3'
+
+config interface 'eth4'
+	option proto 'dhcp'
+	option netmask '255.255.255.0'
+	option hostname 'OpenWRT'
+
+config interface 'wan'
+	option ifname 'eth0'
+	option proto 'dhcp'
+
+config interface 'wan6'
+	option ifname 'eth0'
+	option proto 'dhcpv6'
+
+config globals 'globals'
+	option ula_prefix 'fd1f:86ad:3bf0::/48'
+
