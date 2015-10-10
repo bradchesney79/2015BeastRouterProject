@@ -6,10 +6,10 @@
 #http://downloads.openwrt.org/kamikaze/8.09.2/x86/openwrt-x86-ext2.image
 
 #Newer:
-#http://downloads.openwrt.org/snapshots/trunk/x86/openwrt-x86-generic-combined-ext4.img.gz
+#https://downloads.openwrt.org/chaos_calmer/15.05/x86/64/openwrt-15.05-x86-64-combined-ext4.img.gz
 
-# Need to gunzip first to openwrt-x86-generic-combined-ext4.img
-gunzip openwrt-x86-generic-combined-ext4.img.gz
+# Need to gunzip first to openwrt-15.05-x86-64-combined-ext4.img
+gunzip openwrt-15.05-x86-64-combined-ext4.img.gz
 
 
 # For Linux just use dd.
@@ -17,7 +17,7 @@ gunzip openwrt-x86-generic-combined-ext4.img.gz
 
 #dd if=openwrt-x86-2.6-ext2.image of=/dev/hda
 #or
-dd if=openwrt-x86-generic-combined-ext4.img of=/dev/sda
+dd if=openwrt-15.05-x86-64-combined-ext4.img of=/dev/sda
 
 
 # Get provisional Internet access as a network client to download packaged goodness
