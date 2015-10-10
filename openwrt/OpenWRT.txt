@@ -55,8 +55,10 @@ ifconfig
 
 # You should be able to access the GUI interface with the IP address from ifconfig
 # Enable dropbear ssh access
-# TODO more detailed instructions.
-# TODO instructions for CLI... and not the GUI
+vi /etc/config/dropbear
+
+# Make the service do something
+# ???
 
 # Install the package that makes being an access point work
 opkg install hostapd
@@ -72,39 +74,3 @@ opkg install kmod-ath9k kmod-ath10k kmod-igb
 
 # Could fiddle with the wi-fi cards
 vi /etc/config/wireless
-
-----------
-config wifi-device 'radio0'
-        option type 'mac80211'
-        option hwmode '11a'
-        option path 'pci0000:00/0000:00:1c.0/0000:01:00.0'
-        option txpower '17'
-        option country 'US'
-        option channel 'auto'
-        option htmode 'VHT80'
-
-config wifi-iface
-        option device 'radio0'
-        option mode 'ap'
-        option encryption 'psk-mixed'
-        option key 'password'
-        option ssid 'acwifi'
-        option network 'lan'
-
-config wifi-device 'radio1'
-        option type 'mac80211'
-        option path 'pci0000:00/0000:00:1c.2/0000:06:00.0'
-        option hwmode '11a'
-        option channel 'auto'
-        option htmode 'HT40'
-        option txpower '15'
-        option country 'US'
-
-config wifi-iface
-        option device 'radio1'
-        option mode 'ap'
-        option ssid 'nwifi'
-        option encryption 'psk-mixed'
-        option key 'password'
-        option network 'lan'
----------
