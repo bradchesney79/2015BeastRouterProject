@@ -5,13 +5,13 @@ config wifi-device  radio0
 	option path	'pci0000:00/0000:00:1c.0/0000:01:00.0'
 	option htmode	VHT80
 	# REMOVE THIS LINE TO ENABLE WIFI:
-	# option disabled 1
+	option disabled 1
 
 config wifi-iface
 	option device   radio0
 	option network  lan
 	option mode     ap
-	option ssid     OpenWrtAC
+	option ssid     OpenWrt
 	option encryption none
 
 config wifi-device  radio1
@@ -21,12 +21,12 @@ config wifi-device  radio1
 	option path	'pci0000:00/0000:00:1c.2/0000:06:00.0'
 	option htmode	HT20
 	# REMOVE THIS LINE TO ENABLE WIFI:
-	# option disabled 1
+	option disabled 1
 
 config wifi-iface
 	option device   radio1
 	option network  lan
 	option mode     ap
-	option ssid     OpenWrtN
+	option ssid     OpenWrt
 	option encryption none
 
