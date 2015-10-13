@@ -6,11 +6,9 @@ An argument has been made that you should use separate boxes for all this-- and 
 
 A lot of what is out there has some fairly meager resources that seem robust compared to another piece of hardware with even more meager resources. "Wow, 2GB of storage!" No. Stop it.
 
-This silent 'router' has a full fledged 64-bit quad-core Pentium at it's heart, capacity for 16GB of RAM, two SATA ports for all kinds of storage, an onboard Ethernet 100/1000 port, a USB 3.0 hub, a paralle port, room for PCIe 4x Intel Pro 1000 VT Ethernet Card with four 100/1000 ports, a Compex WLE900VX 3x3 MIMO 802.11ac wireless card, and an Atheros AR5BXB112 3x3 MIMO 802.11n wireless card.
+This silent 'router' has a full fledged 64-bit quad-core Pentium at it's heart, capacity for 16GB of RAM, two SATA ports for all kinds of storage, an onboard Ethernet 100/1000 port, a USB 3.0 hub, a paralle port, room for a PCIe 4x Intel Pro 1000 VT Ethernet Card with four 100/1000 ports, a Compex WLE900VX 3x3 MIMO 802.11ac wireless card, and an Atheros AR5BXB112 3x3 MIMO 802.11n wireless card.
 
-My very reliable and happiness-inducing router began to fail-- It originally cost me $140 brand new. It met 70% of my hopes and dreams regarding a home router for myself as a power user and my family.
-
-I got curious, how much would I have to spend to get everything I want? If 70% cost ~$140, then 100% should cost $200 or so. Nope. Turns out ~$400.
+I got curious, how much would I have to spend to get everything I want? If 70% of my reasonable dreams cost ~$140, then 100% should cost $200 or so. Nope. Turns out ~$400.
 
 The parts list is available here and on my blog.
 
@@ -21,3 +19,5 @@ Next is pfSense.
 Lastly, I would like to try IPFire.
 
 And I welcome anyone to contribute and/or benefit from this endeavor. (Currently need help with OpenWRT configuration.)
+
+This is the router I can build in the year 2015. I hope to build more as time passes and technology improves.
