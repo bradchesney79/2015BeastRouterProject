@@ -1,0 +1,10 @@
+Package: kmod-crypto-core
+Version: 3.18.20-1
+Depends: kernel (=3.18.20-1-7bed08fa9c06eb8089e82c200340ec66)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 7132
+Description:  Core CryptoAPI modules

@@ -1,0 +1,65 @@
+ OpenWrt binary file, for x86.
+
+Old:
+
+http://downloads.openwrt.org/kamikaze/8.09.2/x86/openwrt-x86-ext2.image
+
+Newer:
+
+http://downloads.openwrt.org/snapshots/trunk/x86/openwrt-x86-generic-combined-ext4.img.gz (need to gunzip first) to openwrt-x86-generic-combined-ext4.img
+
+($ gunzip openwrt-x86-generic-combined-ext4.img.gz)
+
+Installation:
+
+
+For Linux just use dd.
+
+Grab the latest binary code from OpenWrt download site.
+
+dd if=openwrt-x86-2.6-ext2.image of=/dev/hda (where hda and image name must be changed)
+
+or
+
+dd if=openwrt-x86-2.6-ext2.image of=/dev/sda (where hda and image name must be changed)
+
+vi /etc/config/networking
+
+config interface	'lan'
+  option ifname		'eth0'
+# option type		'bridge'
+# option type		'static'
+  option proto		'dhcp'
+# option ipaddr		'192.168.1.1'
+# option netmask	'255.255.255.0'
+# option ip6assign	'60'
+
+
+
+/etc/init.d/network reload
+
+
+
+opkg update
+
+
+#make lspci work
+opkg install pcituils
+
+#get flash drives to work
+opkg install block-mount kmod-usb-core kmod-usb2 kmod-usb-ohci kmod-usb-storage kmod-fs-ext4
+
+
+#get your IP address:
+ifconfig
+
+
+#you should be able to access the GUI interface
+#enable ssh
+#TODO more detailed instructions
+#TODO instructions for CLI...
+
+opkg install kmod-ath9k kmod-ath10k
+
+
+

@@ -1,0 +1,8 @@
+Package: luci-mod-admin-full
+Version: git-15.248.30277-3836b45-1
+Depends: libc, luci-base, libubus-lua
+Source: feeds/luci/modules/luci-mod-admin-full
+Section: luci
+Architecture: ar71xx
+Installed-Size: 69202
+Description:  LuCI Administration - full-featured for full control
