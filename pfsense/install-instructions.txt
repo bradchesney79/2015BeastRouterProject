@@ -1,0 +1,14 @@
+So the command to load pfsense onto USB install medium for me was:
+
+dd if=/path/pfSense-memstick-2.2.4-RELEASE-amd64.img of=/dev/sdb bs=512
+
+Let's break this down, the if is your input file; the of is your output file-- my USB drive happens to be device sdb; and bs keeps the program from copying one bit at a time, it makes the copy happen faster.
+
+You want the block device and not a partition so that you write the master boot record as well as the primary partition.
+
+
+You boot from the USB, it will give you the option to install pfSense-- which went well.
+
+pfSense is based on FreeBSD-- without QCA9880 802.11ac driver support. As of yet there doesn't seem to be a good FreeBSD "ath10k equivalent" driver...
+
+Disqualified...

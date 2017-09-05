@@ -1,0 +1,14 @@
+Package: kmod-nf-nathelper
+Version: 3.18.20-1
+Depends: kernel (=3.18.20-1-7bed08fa9c06eb8089e82c200340ec66), kmod-nf-nat
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 5271
+Description:  Default Netfilter (IPv4) Conntrack and NAT helpers
+ Includes:
+ - ftp
+ - irc
+ - tftp

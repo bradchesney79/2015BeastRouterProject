@@ -1,0 +1,109 @@
+ OpenWrt binary file, for x86.
+
+Old:
+
+http://downloads.openwrt.org/kamikaze/8.09.2/x86/openwrt-x86-ext2.image
+
+Newer:
+
+http://downloads.openwrt.org/snapshots/trunk/x86/openwrt-x86-generic-combined-ext4.img.gz (need to gunzip first) to openwrt-x86-generic-combined-ext4.img
+
+($ gunzip openwrt-x86-generic-combined-ext4.img.gz)
+
+Installation:
+
+
+For Linux just use dd.
+
+Grab the latest binary code from OpenWrt download site.
+
+dd if=openwrt-x86-2.6-ext2.image of=/dev/hda (where hda and image name must be changed)
+
+or
+
+dd if=openwrt-x86-2.6-ext2.image of=/dev/sda (where hda and image name must be changed)
+
+vi /etc/config/networking
+
+config interface	'lan'
+  option ifname		'eth0'
+# option type		'bridge'
+# option type		'static'
+  option proto		'dhcp'
+# option ipaddr		'192.168.1.1'
+# option netmask	'255.255.255.0'
+# option ip6assign	'60'
+
+
+
+/etc/init.d/network reload
+
+
+
+opkg update
+
+
+#make dmesg, lspci, ip, ethtool, & bash work
+opkg install dmesg pcituils ip ethtool bash
+
+#get flash drives to work
+opkg install block-mount kmod-usb-core kmod-usb2 kmod-usb-ohci kmod-usb-storage kmod-fs-ext4
+
+
+#get your IP address:
+ifconfig
+
+
+#you should be able to access the GUI interface
+#enable ssh
+#TODO more detailed instructions
+#TODO instructions for CLI...
+
+
+#Intel 1000/PRO controlled by autoinstalled kmod-e1000e package--supposedly
+
+
+opkg install hostapd
+opkg install kmod-ath9k kmod-ath10k kmod-igb
+
+#Needed to remove ssh, then re-add ssh in the GUI
+
+#Could fiddle with the wi-fi cards
+
+# For development purposes install git
+opkg install git
+
+
+config wifi-device 'radio0'
+        option type 'mac80211'
+        option hwmode '11a'
+        option path 'pci0000:00/0000:00:1c.0/0000:01:00.0'
+        option txpower '17'
+        option country 'US'
+        option channel 'auto'
+        option htmode 'VHT80'
+
+config wifi-iface
+        option device 'radio0'
+        option mode 'ap'
+        option encryption 'psk-mixed'
+        option key '140018001024090000102509'
+        option ssid 'ChesneyAC'
+        option network 'lan'
+
+config wifi-device 'radio1'
+        option type 'mac80211'
+        option path 'pci0000:00/0000:00:1c.2/0000:06:00.0'
+        option hwmode '11a'
+        option channel 'auto'
+        option htmode 'HT40'
+        option txpower '15'
+        option country 'US'
+
+config wifi-iface
+        option device 'radio1'
+        option mode 'ap'
+        option ssid 'ChesneyN'
+        option encryption 'psk-mixed'
+        option key '14001800102409102509'
+        option network 'lan'
