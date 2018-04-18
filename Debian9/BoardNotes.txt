@@ -1,0 +1,19 @@
+BoardNotes
+
+
+apt-src for building hostapd from package sources
+look into the debian/config folder for file to edit
+https://wiki.debian.org/apt-src
+
+
+Debian Router Gateway Post
+http://blog.noviantech.com/2010/12/22/debian-router-gateway-in-15-minutes/
+
+My Post About Compex WLE900VX and hostapd
+https://serverfault.com/questions/893961/trouble-with-802-11ac-from-a-wle900vx-card-qca9880-ath10k-via-hostapd/894537#894537
+
+Compex Website
+compex.com.sg
+discourse.compex.com.sg
+
+
