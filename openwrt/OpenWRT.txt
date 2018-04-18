@@ -26,15 +26,29 @@ dd if=openwrt-15.05-x86-64-combined-ext4.img of=/dev/sda
 vi /etc/config/network
 
 ---------
-config interface    'lan'
-config interface    'lan'
-  option ifname        'eth0'
-# option type        'bridge'
-# option type        'static'
- option proto        'dhcp'
-# option ipaddr        '192.168.1.1'
-# option netmask    '255.255.255.0'
-# option ip6assign    '60'
+config interface 'loopback'
+    option ifname 'lo'
+    option proto 'static'
+    option ipaddr '127.0.0.1'
+    option netmask '255.0.0.0'
+
+config interface 'lan'
+    option type 'bridge'
+    option proto 'static'
+    option ipaddr '192.168.1.1'
+    option netmask '255.255.255.0'
+    option _orig_ifname 'eth1'
+    option _orig_bridge 'true'
+    option ifname 'eth1 eth2 eth3'
+
+config interface 'wan'
+    option ifname 'eth0'
+    option _orig_ifname 'eth0'
+    option _orig_bridge 'false'
+    option proto 'dhcp'
+
+config globals 'globals'
+    option ula_prefix 'USE_THE_ONE_FROM_YOUR_EXISTING_CONFIG'
 ----------
 
 # Reload the network
@@ -74,3 +88,8 @@ opkg install kmod-ath9k kmod-ath10k kmod-igb
 
 # Could fiddle with the wi-fi cards
 vi /etc/config/wireless
+
+----------
+
+----------
+
